@@ -1,0 +1,16 @@
+@import '../../theme/colors.scss';
+
+.title {
+  margin-bottom: 16px;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.content {
+  padding: 24px 16px;
+  border-top: solid 1px $border-color;
+  border-bottom: solid 1px $border-color;
+  background-color: $white;
+}
