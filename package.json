@@ -1,0 +1,26 @@
+{
+  "name": "mysalary",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write 'src/**/*.tsx'",
+    "prettier:check": "prettier --check 'src/**/*.tsx'"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.3",
+    "@types/react": "^16.9.25",
+    "prettier": "^2.0.1",
+    "typescript": "^3.8.3"
+  }
+}
