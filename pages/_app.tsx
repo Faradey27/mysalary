@@ -20,11 +20,28 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>My page</title>
+          <title>Salary Calculator</title>
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
+          <meta name="theme-color" content={theme.palette.primary.main} />
+          <style>{`
+            body {
+              font-family: Helvetica, Roboto, Arial, sans-serif;
+              background-color: ${theme.palette.background.default};
+              font-size: 16px;
+            }
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              margin: 0;
+            }
+          `}</style>
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />

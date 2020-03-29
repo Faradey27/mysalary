@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: 16,
     textAlign: 'center',
@@ -8,12 +8,12 @@ const useStyles = makeStyles({
     fontWeight: 400,
   },
   content: {
-    padding: '24px 16px',
-    // borderTop: 'solid 1px $border-color',
-    // borderBottom: 'solid 1px $border-color',
-    // backgroundColor: '$white',
+    padding: 24,
+    borderTop: `solid 1px ${theme.palette.border.default}`,
+    borderBottom: `solid 1px ${theme.palette.border.default}`,
+    backgroundColor: theme.palette.colors.white,
   },
-});
+}));
 
 const Widget = ({ title, children }) => {
   const classes = useStyles();
