@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import { ReactChild } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -15,7 +16,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Widget = ({ title, children }) => {
+interface WidgetProps {
+  title: string;
+  children: ReactChild;
+}
+
+const Widget = ({ title, children }: WidgetProps) => {
   const classes = useStyles();
 
   return (

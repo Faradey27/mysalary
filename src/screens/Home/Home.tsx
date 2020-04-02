@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main className={classes.container}>
       <Widget title="Salary calculator">
-        <SalaryCalculator currency="€" minValue={24} maxValue={150} />
+        <SalaryCalculator />
       </Widget>
     </main>
   );
