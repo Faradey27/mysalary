@@ -69,6 +69,18 @@ const SalaryCalculator = () => {
     [countryService, currency]
   );
 
+  const minValue = currencyService.convert(
+    countryData.min.value,
+    countryData.min.currency,
+    currency
+  );
+
+  const maxValue = currencyService.convert(
+    countryData.max.value,
+    countryData.max.currency,
+    currency
+  );
+
   return (
     <FormControl component="form" className={classes.form}>
       <CountrySelector
@@ -79,8 +91,8 @@ const SalaryCalculator = () => {
       <SalaryRange
         currency={currencyService.getSign(currency)}
         value={salaryValue}
-        minValue={countryData.min.value}
-        maxValue={countryData.max.value}
+        minValue={minValue}
+        maxValue={maxValue}
         className={classes.salaryRange}
         onChange={setSalaryValue}
       />

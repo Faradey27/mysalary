@@ -8,7 +8,7 @@ interface CountryData {
       value: number
     },
     max: {
-      currency: string,
+      currency: Currency,
       value: number
     }
     median: {
