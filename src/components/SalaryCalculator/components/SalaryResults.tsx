@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import clsx from 'clsx';
 import FormGroup from '@material-ui/core/FormGroup';
 import { makeStyles, FormHelperText, Divider } from '@material-ui/core';
 
@@ -7,11 +8,12 @@ const useStyles = makeStyles((theme) => ({
     padding: 16,
     background: theme.palette.colors.block,
     borderRadius: 4,
-    marginTop: 24,
   },
   resultTitle: {
     fontSize: 17,
     color: theme.palette.text.primary,
+    display: 'flex',
+    justifyContent: 'space-between',
   },
   divider: {
     margin: '16px 0',
@@ -21,18 +23,23 @@ const useStyles = makeStyles((theme) => ({
 interface SalaryResultsProps {
   currency: string;
   salaryValue: number;
+  className: string;
 }
 
-const SalaryResults = ({ currency, salaryValue }: SalaryResultsProps) => {
+const SalaryResults = ({
+  currency,
+  salaryValue,
+  className,
+}: SalaryResultsProps) => {
   const classes = useStyles();
 
   return (
-    <FormGroup className={classes.results}>
+    <FormGroup className={clsx(classes.results, className)}>
       <FormHelperText className={classes.resultTitle}>
         {`Yearly net income: `}
         <strong>
           {currency}
-          {Math.floor(salaryValue * 1000)}
+          {Math.floor(salaryValue)}
         </strong>
       </FormHelperText>
       <Divider className={classes.divider} />
@@ -40,7 +47,7 @@ const SalaryResults = ({ currency, salaryValue }: SalaryResultsProps) => {
         {`Monthly net income: `}
         <strong>
           {currency}
-          {Math.floor((salaryValue * 1000) / 12)}
+          {Math.floor(salaryValue / 12)}
         </strong>
       </FormHelperText>
     </FormGroup>

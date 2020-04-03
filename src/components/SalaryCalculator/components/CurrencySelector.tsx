@@ -5,8 +5,8 @@ import {
   Select,
   MenuItem,
 } from '@material-ui/core';
-import { memo, useCallback, ChangeEvent } from 'react';
-import { Currency } from '../types';
+import { memo, useCallback } from 'react';
+import { Currency } from '../../../types';
 
 const useStyles = makeStyles(() => ({
   formControl: {},

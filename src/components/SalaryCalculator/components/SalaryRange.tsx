@@ -60,6 +60,7 @@ const SalaryRange = ({
             className={classes.slider}
             min={minValue}
             max={maxValue}
+            step={1000}
             classes={{
               thumb: classes.thumb,
             }}
@@ -68,7 +69,7 @@ const SalaryRange = ({
             aria-labelledby="continuous-slider"
           />
         }
-        label={`${currency}${value * 1000}`}
+        label={`${currency}${Math.floor(value)}`}
       />
     </FormControl>
   );

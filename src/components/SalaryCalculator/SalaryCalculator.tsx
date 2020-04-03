@@ -1,12 +1,14 @@
-import { useState, memo, useCallback } from 'react';
+import { useState, memo, useCallback, useMemo } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core';
 
 import SalaryRange from './components/SalaryRange';
 import SalaryResults from './components/SalaryResults';
 import CurrencySelector from './components/CurrencySelector';
-import { Currency, Country } from './types';
+import SalaryNotes from './components/SalaryNotes';
 import CountrySelector from './components/CountrySelector';
+import { useAppServices } from '../../services';
+import { Currency, Country } from '../../types';
 
 const useStyles = makeStyles(() => ({
   form: {
@@ -18,45 +20,77 @@ const useStyles = makeStyles(() => ({
   countrySelector: {
     marginBottom: 24,
   },
+  notes: {
+    marginTop: 24,
+  },
+  results: {
+    marginTop: 4,
+  },
 }));
-
-const getDefaultSalaryValue = (min: number, max: number) =>
-  Math.floor((max - min) * 0.39);
 
 const SalaryCalculator = () => {
   const classes = useStyles();
+  const { currencyService, countryService } = useAppServices();
 
-  const minValue = 24;
-  const maxValue = 150;
-
-  const [salaryValue, setSalaryValue] = useState(
-    getDefaultSalaryValue(minValue, maxValue)
-  );
   const [currency, setCurrency] = useState(Currency.EUR);
   const [country, setCountry] = useState(Country.DEU);
+  const countryData = useMemo(() => countryService.getCountryData(country), [
+    country,
+  ]);
+  const [salaryValue, setSalaryValue] = useState(
+    currencyService.convert(
+      countryData.median.value,
+      countryData.median.currency,
+      currency
+    )
+  );
 
-  const handleCurrencyChange = useCallback((value: Currency) => {
-    setCurrency(value);
-    setSalaryValue();
-  });
+  const handleCurrencyChange = useCallback(
+    (nextCurrency: Currency) => {
+      setSalaryValue(
+        currencyService.convert(salaryValue, currency, nextCurrency)
+      );
+      setCurrency(nextCurrency);
+    },
+    [salaryValue, currency]
+  );
+
+  const handleCountryChange = useCallback(
+    (value) => {
+      setCountry(value);
+      const countryData = countryService.getCountryData(value);
+      const newSalaryValue = currencyService.convert(
+        countryData.median.value,
+        countryData.median.currency,
+        currency
+      );
+      setSalaryValue(newSalaryValue);
+    },
+    [countryService, currency]
+  );
 
   return (
     <FormControl component="form" className={classes.form}>
       <CountrySelector
         className={classes.countrySelector}
         value={country}
-        onChange={setCountry}
+        onChange={handleCountryChange}
       />
       <SalaryRange
-        currency={currency}
+        currency={currencyService.getSign(currency)}
         value={salaryValue}
-        minValue={minValue}
-        maxValue={maxValue}
+        minValue={countryData.min.value}
+        maxValue={countryData.max.value}
         className={classes.salaryRange}
         onChange={setSalaryValue}
       />
       <CurrencySelector value={currency} onChange={handleCurrencyChange} />
-      <SalaryResults currency="€" salaryValue={salaryValue} />
+      <SalaryNotes className={classes.notes} />
+      <SalaryResults
+        className={classes.results}
+        currency={currencyService.getSign(currency)}
+        salaryValue={salaryValue}
+      />
     </FormControl>
   );
 };

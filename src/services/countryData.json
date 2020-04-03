@@ -1,0 +1,30 @@
+{
+  "DEU": {
+    "min": {
+      "currency": "EUR",
+      "value": 24000
+    },
+    "max": {
+      "currency": "EUR",
+      "value": 150000
+    },
+    "median": {
+      "currency": "EUR",
+      "value": 49000
+    }
+  },
+  "EST": {
+    "min": {
+      "currency": "EUR",
+      "value": 24000
+    },
+    "max": {
+      "currency": "EUR",
+      "value": 140000
+    },
+    "median": {
+      "currency": "EUR",
+      "value": 40000
+    }
+  }
+}

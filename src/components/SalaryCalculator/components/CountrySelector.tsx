@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { memo, useCallback } from 'react';
-import { Currency, Country } from '../types';
+import { Currency, Country } from '../../../types';
 
 interface SalaryRangeProps {
   className: string;
