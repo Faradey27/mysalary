@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useState, memo, useCallback } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core';
 
@@ -35,6 +35,11 @@ const SalaryCalculator = () => {
   const [currency, setCurrency] = useState(Currency.EUR);
   const [country, setCountry] = useState(Country.DEU);
 
+  const handleCurrencyChange = useCallback((value: Currency) => {
+    setCurrency(value);
+    setSalaryValue();
+  });
+
   return (
     <FormControl component="form" className={classes.form}>
       <CountrySelector
@@ -50,7 +55,7 @@ const SalaryCalculator = () => {
         className={classes.salaryRange}
         onChange={setSalaryValue}
       />
-      <CurrencySelector value={currency} onChange={setCurrency} />
+      <CurrencySelector value={currency} onChange={handleCurrencyChange} />
       <SalaryResults currency="€" salaryValue={salaryValue} />
     </FormControl>
   );
