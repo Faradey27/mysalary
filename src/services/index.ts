@@ -7,7 +7,7 @@ import CountryService from './CountryService';
 export const getAppServices = () => ({
   currencyService: new CurrencyService(),
   countryService: new CountryService(),
-})
+});
 
 const AppServicesContext = createContext<AppServices>(getAppServices());
 

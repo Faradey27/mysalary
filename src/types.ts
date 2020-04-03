@@ -1,5 +1,5 @@
-import CurrencyService from "./services/CurrencyService";
-import CountryService from "./services/CountryService";
+import CurrencyService from './services/CurrencyService';
+import CountryService from './services/CountryService';
 
 export interface AppServices {
   currencyService: CurrencyService;
@@ -8,10 +8,10 @@ export interface AppServices {
 
 export enum Currency {
   EUR = 'EUR',
-  USD = 'USD'
+  USD = 'USD',
 }
 
 export enum Country {
   DEU = 'DEU',
-  EST = 'EST'
+  EST = 'EST',
 }

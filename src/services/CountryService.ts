@@ -4,18 +4,18 @@ import { Country, Currency } from '../types';
 interface CountryData {
   [key: string]: {
     min: {
-      currency: Currency,
-      value: number
-    },
+      currency: Currency;
+      value: number;
+    };
     max: {
-      currency: Currency,
-      value: number
-    }
+      currency: Currency;
+      value: number;
+    };
     median: {
-      currency: Currency,
-      value: number
-    }
-  }
+      currency: Currency;
+      value: number;
+    };
+  };
 }
 
 class CountryService {
@@ -25,5 +25,3 @@ class CountryService {
 }
 
 export default CountryService;
-
-
