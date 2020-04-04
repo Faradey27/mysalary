@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   divider: {
     margin: '16px 0',

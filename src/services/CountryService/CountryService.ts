@@ -1,5 +1,7 @@
-import countryData from './countryData.json';
-import { Country, Currency } from '../types';
+import countryData from '../countryData.json';
+import { Country, Currency } from '../../types';
+
+import countries from './countries';
 
 interface CountryData {
   [key: string]: {
@@ -22,6 +24,11 @@ class CountryService {
   private results: CountryData = countryData as CountryData;
 
   public getCountryData = (countryCode: Country) => this.results[countryCode];
+
+  public getNetIncome = (countryCode: Country, value: number) =>
+    countries[countryCode] && countries[countryCode].getNetIncome
+      ? countries[countryCode].getNetIncome(value)
+      : value;
 }
 
 export default CountryService;

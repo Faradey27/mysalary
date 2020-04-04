@@ -48,7 +48,7 @@ const SalaryRange = ({
   return (
     <FormControl className={className}>
       <FormLabel component="legend" className={classes.title}>
-        Annual gross income
+        Yearly gross income
       </FormLabel>
       <FormControlLabel
         labelPlacement="top"

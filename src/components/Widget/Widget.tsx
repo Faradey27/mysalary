@@ -11,13 +11,17 @@ const useStyles = makeStyles((theme) => ({
   content: {
     padding: 24,
     borderTop: `solid 1px ${theme.palette.border.default}`,
-    borderBottom: `solid 1px ${theme.palette.border.default}`,
+    // borderBottom: `solid 1px ${theme.palette.border.default}`,
     backgroundColor: theme.palette.colors.white,
+  },
+  root: {
+    height: '100%',
+    background: theme.palette.colors.white,
   },
 }));
 
 interface WidgetProps {
-  title: string;
+  title?: string;
   children: ReactChild;
 }
 
@@ -25,10 +29,12 @@ const Widget = ({ title, children }: WidgetProps) => {
   const classes = useStyles();
 
   return (
-    <article>
-      <header>
-        <h2 className={classes.title}>{title}</h2>
-      </header>
+    <article className={classes.root}>
+      {title && (
+        <header>
+          <h2 className={classes.title}>{title}</h2>
+        </header>
+      )}
       <section className={classes.content}>{children}</section>
     </article>
   );

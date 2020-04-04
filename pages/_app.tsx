@@ -29,11 +29,17 @@ export default class MyApp extends App {
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="description" content="Salary calculator per country" />
+          <meta name="keywords" content="salary,taxes,calculator,tax" />
           <style>{`
+            html, body, body > div {
+              height: 100%;
+            }
             body {
               font-family: Helvetica, Roboto, Arial, sans-serif;
               background-color: ${theme.palette.background.default};
               font-size: 16px;
+              min-width: 256px;
             }
             body,
             h1,
