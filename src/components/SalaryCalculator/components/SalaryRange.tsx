@@ -3,6 +3,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles, FormControl } from '@material-ui/core';
 import { memo, ChangeEvent, useCallback } from 'react';
+import { useIntl, defineMessages } from 'react-intl';
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -33,6 +34,13 @@ interface SalaryRangeProps {
   onChange: (value: number) => void;
 }
 
+const messages = defineMessages({
+  yearlyGrossIncome: {
+    id: 'salaryCalculator.yearlyGrossIncome',
+    defaultMessage: 'Yearly gross income',
+  },
+});
+
 const SalaryRange = ({
   className,
   currency,
@@ -42,13 +50,14 @@ const SalaryRange = ({
   onChange,
 }: SalaryRangeProps) => {
   const classes = useStyles();
+  const intl = useIntl();
 
   const handleChange = useCallback((_e, value) => onChange(value), [onChange]);
 
   return (
     <FormControl className={className}>
       <FormLabel component="legend" className={classes.title}>
-        Yearly gross income
+        {intl.formatMessage(messages.yearlyGrossIncome)}
       </FormLabel>
       <FormControlLabel
         labelPlacement="top"

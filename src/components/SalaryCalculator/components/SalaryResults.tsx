@@ -2,6 +2,7 @@ import { memo } from 'react';
 import clsx from 'clsx';
 import FormGroup from '@material-ui/core/FormGroup';
 import { makeStyles, FormHelperText, Divider } from '@material-ui/core';
+import { defineMessages, useIntl } from 'react-intl';
 
 const useStyles = makeStyles((theme) => ({
   results: {
@@ -27,17 +28,29 @@ interface SalaryResultsProps {
   className: string;
 }
 
+const messages = defineMessages({
+  yearlyGrossIncome: {
+    id: 'salaryCalculator.yearlyNetIncome',
+    defaultMessage: 'Yearly net income: ',
+  },
+  monthlyGrossIncome: {
+    id: 'salaryCalculator.monthlyNetIncome',
+    defaultMessage: 'Monthly net income: ',
+  },
+});
+
 const SalaryResults = ({
   currency,
   salaryValue,
   className,
 }: SalaryResultsProps) => {
   const classes = useStyles();
+  const intl = useIntl();
 
   return (
     <FormGroup className={clsx(classes.results, className)}>
       <FormHelperText className={classes.resultTitle}>
-        {`Yearly net income: `}
+        {intl.formatMessage(messages.yearlyGrossIncome)}
         <strong>
           {currency}
           {Math.floor(salaryValue)}
@@ -45,7 +58,7 @@ const SalaryResults = ({
       </FormHelperText>
       <Divider className={classes.divider} />
       <FormHelperText className={classes.resultTitle}>
-        {`Monthly net income: `}
+        {intl.formatMessage(messages.monthlyGrossIncome)}
         <strong>
           {currency}
           {Math.floor(salaryValue / 12)}

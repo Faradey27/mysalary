@@ -1,6 +1,8 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { memo, useCallback } from 'react';
-import { Currency, Country } from '../../../types';
+import { useIntl, defineMessages } from 'react-intl';
+
+import { Country } from '../../../types';
 
 interface SalaryRangeProps {
   className: string;
@@ -8,19 +10,41 @@ interface SalaryRangeProps {
   onChange: (value: Country) => void;
 }
 
+const messages = defineMessages({
+  country: {
+    id: 'salaryCalculator.country',
+    defaultMessage: 'Country',
+  },
+  deu: {
+    id: 'countries.deu',
+    defaultMessage: 'Germany',
+  },
+  est: {
+    id: 'countries.est',
+    defaultMessage: 'Estonia',
+  },
+});
+
 const SalaryRange = ({ className, value, onChange }: SalaryRangeProps) => {
+  const intl = useIntl();
   const handleChange = useCallback((e) => onChange(e.target.value), [onChange]);
 
   return (
     <FormControl className={className}>
-      <InputLabel id="country-selector-label">Country</InputLabel>
+      <InputLabel id="country-selector-label">
+        {intl.formatMessage(messages.country)}
+      </InputLabel>
       <Select
         labelId="country-selector-label"
         value={value}
         onChange={handleChange}
       >
-        <MenuItem value={Country.DEU}>Germany</MenuItem>
-        <MenuItem value={Country.EST}>Estonia</MenuItem>
+        <MenuItem value={Country.DEU}>
+          {intl.formatMessage(messages.deu)}
+        </MenuItem>
+        <MenuItem value={Country.EST}>
+          {intl.formatMessage(messages.est)}
+        </MenuItem>
       </Select>
     </FormControl>
   );

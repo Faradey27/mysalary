@@ -2,12 +2,6 @@ import { makeStyles } from '@material-ui/core';
 import { ReactChild } from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    marginBottom: 16,
-    textAlign: 'center',
-    fontSize: 24,
-    fontWeight: 400,
-  },
   content: {
     padding: 24,
     borderTop: `solid 1px ${theme.palette.border.default}`,
@@ -21,20 +15,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface WidgetProps {
-  title?: string;
   children: ReactChild;
 }
 
-const Widget = ({ title, children }: WidgetProps) => {
+const Widget = ({ children }: WidgetProps) => {
   const classes = useStyles();
 
   return (
     <article className={classes.root}>
-      {title && (
-        <header>
-          <h2 className={classes.title}>{title}</h2>
-        </header>
-      )}
       <section className={classes.content}>{children}</section>
     </article>
   );

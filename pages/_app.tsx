@@ -3,6 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { IntlProvider } from 'react-intl';
 import theme from '../src/theme';
 import { AppServicesProvider, getAppServices } from '../src/services';
 
@@ -54,9 +55,11 @@ export default class MyApp extends App {
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <AppServicesProvider value={services}>
-            <Component {...pageProps} />
-          </AppServicesProvider>
+          <IntlProvider locale="en">
+            <AppServicesProvider value={services}>
+              <Component {...pageProps} />
+            </AppServicesProvider>
+          </IntlProvider>
         </ThemeProvider>
       </React.Fragment>
     );
