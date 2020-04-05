@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { FormHelperText, makeStyles } from '@material-ui/core';
-import FormGroup from '@material-ui/core/FormGroup';
+import { FormGroup, FormHelperText, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   note: {

@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import {
   AppBar,
   IconButton,
@@ -6,6 +7,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+
+import LeftBar from '../LeftBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -19,6 +22,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const [isDrawerOpen, setDrawerState] = useState(false);
+
+  const handleOpenDrawer = useCallback(() => {
+    setDrawerState(true);
+  }, []);
+
+  const handleCloseDrawer = useCallback(() => {
+    setDrawerState(false);
+  }, []);
 
   return (
     <AppBar position="static">
@@ -28,12 +40,18 @@ const Header = () => {
           className={classes.menuButton}
           color="inherit"
           aria-label="menu"
+          onClick={handleOpenDrawer}
         >
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
           Salary calculator
         </Typography>
+        <LeftBar
+          open={isDrawerOpen}
+          onOpen={handleOpenDrawer}
+          onClose={handleCloseDrawer}
+        />
       </Toolbar>
     </AppBar>
   );

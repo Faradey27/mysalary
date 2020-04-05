@@ -1,10 +1,11 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import App from 'next/app';
 import Head from 'next/head';
 
+import Header from '../src/components/Header';
 import { AppServicesProvider, getAppServices } from '../src/services';
 import theme from '../src/theme';
 
@@ -36,6 +37,8 @@ export default class MyApp extends App {
           <style>{`
             html, body, body > div {
               height: 100%;
+              display: flex;
+              flex-direction: column;
             }
             body {
               font-family: Helvetica, Roboto, Arial, sans-serif;
@@ -58,6 +61,7 @@ export default class MyApp extends App {
           <CssBaseline />
           <IntlProvider locale="en">
             <AppServicesProvider value={services}>
+              <Header />
               <Component {...pageProps} />
             </AppServicesProvider>
           </IntlProvider>

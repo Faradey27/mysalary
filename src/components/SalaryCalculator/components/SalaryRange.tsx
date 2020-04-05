@@ -1,9 +1,12 @@
-import { ChangeEvent, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { FormControl, makeStyles } from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Slider from '@material-ui/core/Slider';
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  makeStyles,
+  Slider,
+} from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   title: {

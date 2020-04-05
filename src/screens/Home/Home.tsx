@@ -16,7 +16,6 @@ const Home = () => {
   const classes = useStyles();
   return (
     <main className={classes.container}>
-      <Header />
       <Widget>
         <SalaryCalculator />
       </Widget>
