@@ -1,4 +1,3 @@
-import countryData from '../countryData.json';
 import { Country, Currency } from '../../types';
 
 import countries from './countries';
@@ -21,14 +20,22 @@ interface CountryData {
 }
 
 class CountryService {
-  private results: CountryData = countryData as CountryData;
+  public getCountryData = (countryCode: Country) => {
+    const currentCountry = countries.get(countryCode);
+    if (!currentCountry) {
+      throw new Error('Unknown country');
+    }
+    return currentCountry.getCountryData();
+  };
 
-  public getCountryData = (countryCode: Country) => this.results[countryCode];
+  public getNetIncome = (countryCode: Country, value: number) => {
+    const currentCountry = countries.get(countryCode);
+    if (!currentCountry) {
+      throw new Error('Unknown country');
+    }
 
-  public getNetIncome = (countryCode: Country, value: number) =>
-    countries[countryCode] && countries[countryCode].getNetIncome
-      ? countries[countryCode].getNetIncome(value)
-      : value;
+    return currentCountry.getNetIncome(value);
+  };
 }
 
 export default CountryService;

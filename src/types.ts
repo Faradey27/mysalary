@@ -1,4 +1,4 @@
-import CurrencyService from './services/CurrencyService';
+import CurrencyService from './services/CurrencyService/CurrencyService';
 import CountryService from './services/CountryService';
 
 export interface AppServices {
@@ -14,4 +14,25 @@ export enum Currency {
 export enum Country {
   DEU = 'DEU',
   EST = 'EST',
+}
+
+interface CountryData {
+  min: {
+    currency: Currency;
+    value: number;
+  };
+  max: {
+    currency: Currency;
+    value: number;
+  };
+  median: {
+    currency: Currency;
+    value: number;
+  };
+}
+
+export interface CountryInterface {
+  getCountryData: () => CountryData;
+  getBaseCurrency: () => Currency;
+  getNetIncome: (value: number) => number;
 }

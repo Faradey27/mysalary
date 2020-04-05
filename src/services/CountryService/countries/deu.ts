@@ -1,9 +1,7 @@
-// https://www.emta.ee/eng/tax-free-income
-
 import { CountryInterface, Currency } from '../../../types';
 
 // all calcuations happen per year
-class Est implements CountryInterface {
+class Deu implements CountryInterface {
   private baseCurrency: Currency = Currency.EUR;
 
   private employeeTaxes = {
@@ -24,12 +22,12 @@ class Est implements CountryInterface {
   };
 
   private maxSalary = {
-    value: 140000,
+    value: 150000,
     currency: Currency.EUR,
   };
 
   private medianSalary = {
-    value: 40000,
+    value: 49000,
     currency: Currency.EUR,
   };
 
@@ -73,4 +71,4 @@ class Est implements CountryInterface {
     );
 }
 
-export default Est;
+export default Deu;

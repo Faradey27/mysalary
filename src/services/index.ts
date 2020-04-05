@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import { AppServices } from '../types';
-import CurrencyService from './CurrencyService';
+import CurrencyService from './CurrencyService/CurrencyService';
 import CountryService from './CountryService';
 
 export const getAppServices = () => ({
