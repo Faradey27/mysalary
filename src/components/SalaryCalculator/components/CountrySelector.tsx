@@ -1,6 +1,6 @@
-import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { memo, useCallback } from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
+import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 
 import { Country } from '../../../types';
 

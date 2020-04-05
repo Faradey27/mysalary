@@ -1,11 +1,3 @@
-import CurrencyService from './services/CurrencyService/CurrencyService';
-import CountryService from './services/CountryService';
-
-export interface AppServices {
-  currencyService: CurrencyService;
-  countryService: CountryService;
-}
-
 export enum Currency {
   EUR = 'EUR',
   USD = 'USD',

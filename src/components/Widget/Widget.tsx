@@ -1,5 +1,5 @@
-import { makeStyles } from '@material-ui/core';
 import { ReactChild } from 'react';
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   content: {

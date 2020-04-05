@@ -1,5 +1,5 @@
-import cachedCurrencyData from './currencyData.json';
 import { Currency } from '../../types';
+import cachedCurrencyData from './currencyData.json';
 
 interface CurrencyResponse {
   base: string;

@@ -7,6 +7,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "npm run lint:js && npm run lint:ts && npm run prettier:check",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:ts -- --fix && npm run prettier",
+    "lint:js": "eslint '**/*.{js,ts,tsx}' --ignore-pattern='coverage/'",
+    "lint:ts": "tsc -p tsconfig.json --noEmit",
     "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'"
   },
@@ -25,6 +29,21 @@
   "devDependencies": {
     "@types/node": "^13.9.3",
     "@types/react": "^16.9.25",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-class-prefer-methods": "^1.0.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
     "prettier": "^2.0.1",
     "typescript": "^3.8.3"
   }

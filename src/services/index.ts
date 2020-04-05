@@ -1,8 +1,12 @@
 import { createContext, useContext } from 'react';
 
-import { AppServices } from '../types';
-import CurrencyService from './CurrencyService/CurrencyService';
 import CountryService from './CountryService';
+import CurrencyService from './CurrencyService/CurrencyService';
+
+export interface AppServices {
+  currencyService: CurrencyService;
+  countryService: CountryService;
+}
 
 export const getAppServices = () => ({
   currencyService: new CurrencyService(),

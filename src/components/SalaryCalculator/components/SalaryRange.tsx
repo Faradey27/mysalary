@@ -1,9 +1,9 @@
-import Slider from '@material-ui/core/Slider';
-import FormLabel from '@material-ui/core/FormLabel';
+import { ChangeEvent, memo, useCallback } from 'react';
+import { defineMessages, useIntl } from 'react-intl';
+import { FormControl, makeStyles } from '@material-ui/core';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { makeStyles, FormControl } from '@material-ui/core';
-import { memo, ChangeEvent, useCallback } from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -52,7 +52,9 @@ const SalaryRange = ({
   const classes = useStyles();
   const intl = useIntl();
 
-  const handleChange = useCallback((_e, value) => onChange(value), [onChange]);
+  const handleChange = useCallback((_e, nextValue) => onChange(nextValue), [
+    onChange,
+  ]);
 
   return (
     <FormControl className={className}>

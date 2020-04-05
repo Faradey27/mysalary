@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import clsx from 'clsx';
-import FormGroup from '@material-ui/core/FormGroup';
-import { makeStyles, FormHelperText, Divider } from '@material-ui/core';
 import { defineMessages, useIntl } from 'react-intl';
+import { Divider, FormHelperText, makeStyles } from '@material-ui/core';
+import FormGroup from '@material-ui/core/FormGroup';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
   results: {

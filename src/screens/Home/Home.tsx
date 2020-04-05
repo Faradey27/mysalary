@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core';
-import Widget from '../../components/Widget';
-import SalaryCalculator from '../../components/SalaryCalculator';
+
 import Header from '../../components/Header';
+import SalaryCalculator from '../../components/SalaryCalculator';
+import Widget from '../../components/Widget';
 
 const useStyles = makeStyles({
   container: {

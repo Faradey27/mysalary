@@ -1,14 +1,13 @@
-import { useState, memo, useCallback, useMemo, useEffect } from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import { makeStyles } from '@material-ui/core';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { FormControl, makeStyles } from '@material-ui/core';
 
-import SalaryRange from './components/SalaryRange';
-import SalaryResults from './components/SalaryResults';
+import { useAppServices } from '../../services';
+import { Country, Currency } from '../../types';
+import CountrySelector from './components/CountrySelector';
 import CurrencySelector from './components/CurrencySelector';
 import SalaryNotes from './components/SalaryNotes';
-import CountrySelector from './components/CountrySelector';
-import { useAppServices } from '../../services';
-import { Currency, Country } from '../../types';
+import SalaryRange from './components/SalaryRange';
+import SalaryResults from './components/SalaryResults';
 
 const useStyles = makeStyles(() => ({
   form: {
@@ -36,6 +35,7 @@ const SalaryCalculator = () => {
   const [country, setCountry] = useState(Country.DEU);
   const countryData = useMemo(() => countryService.getCountryData(country), [
     country,
+    countryService,
   ]);
   const [salaryValue, setSalaryValue] = useState(
     currencyService.convert(
@@ -56,21 +56,21 @@ const SalaryCalculator = () => {
       );
       setCurrency(nextCurrency);
     },
-    [salaryValue, currency]
+    [salaryValue, currency, currencyService]
   );
 
   const handleCountryChange = useCallback(
     (value) => {
       setCountry(value);
-      const countryData = countryService.getCountryData(value);
+      const updatedCountryData = countryService.getCountryData(value);
       const newSalaryValue = currencyService.convert(
-        countryData.median.value,
-        countryData.median.currency,
+        updatedCountryData.median.value,
+        updatedCountryData.median.currency,
         currency
       );
       setSalaryValue(newSalaryValue);
     },
-    [countryService, currency]
+    [countryService, currency, currencyService]
   );
 
   const minValue = currencyService.convert(

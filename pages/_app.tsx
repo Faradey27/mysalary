@@ -1,11 +1,12 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
 import App from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { IntlProvider } from 'react-intl';
-import theme from '../src/theme';
+
 import { AppServicesProvider, getAppServices } from '../src/services';
+import theme from '../src/theme';
 
 const services = getAppServices();
 

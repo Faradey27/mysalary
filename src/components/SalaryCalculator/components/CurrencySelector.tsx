@@ -1,12 +1,12 @@
-import {
-  makeStyles,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
 import { memo, useCallback } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import {
+  FormControl,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select,
+} from '@material-ui/core';
 
 import { Currency } from '../../../types';
 

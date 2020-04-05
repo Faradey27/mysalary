@@ -1,5 +1,5 @@
-import { createMuiTheme } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 declare module '@material-ui/core/styles/createPalette' {
   interface IconPaletteColorOptions {

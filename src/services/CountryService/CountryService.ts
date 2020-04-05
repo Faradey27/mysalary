@@ -1,5 +1,4 @@
 import { Country, Currency } from '../../types';
-
 import countries from './countries';
 
 interface CountryData {

@@ -1,6 +1,6 @@
-import Est from './est';
-import Deu from './deu';
 import { Country, CountryInterface } from '../../../types';
+import Deu from './deu';
+import Est from './est';
 
 const countries = new Map<Country, CountryInterface>();
 
