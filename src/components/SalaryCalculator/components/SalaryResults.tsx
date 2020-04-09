@@ -2,9 +2,9 @@ import { memo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   Divider,
+  FormGroup,
   FormHelperText,
   makeStyles,
-  FormGroup,
 } from '@material-ui/core';
 import clsx from 'clsx';
 
