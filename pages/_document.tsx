@@ -4,12 +4,27 @@ import Document, { Head, Main, NextScript } from 'next/document';
 
 import theme from '../src/theme';
 
+/* eslint-disable react/no-danger */
+
 export default class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
         <Head>
           {/* PWA primary color */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-163305014-1"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-163305014-1');`,
+            }}
+          />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
