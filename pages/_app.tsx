@@ -32,8 +32,14 @@ export default class MyApp extends App {
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <meta name="description" content="Salary calculator per country" />
-          <meta name="keywords" content="salary,taxes,calculator,tax" />
+          <meta
+            name="description"
+            content="Mysalary - salary calculator. Net salary after paying taxes. Salary in different countries. Jobs for developers."
+          />
+          <meta
+            name="keywords"
+            content="salary,taxes,calculator,tax,net income, gross income"
+          />
           <style>{`
             html, body, body > div {
               height: 100%;
