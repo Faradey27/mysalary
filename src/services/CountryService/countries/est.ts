@@ -48,9 +48,9 @@ class Est implements CountryInterface {
   public getBaseCurrency = () => this.baseCurrency;
 
   public getCountryData = () => ({
-    min: this.minSalary,
-    max: this.maxSalary,
-    median: this.medianSalary,
+    minSalary: this.minSalary,
+    maxSalary: this.maxSalary,
+    medianSalary: this.medianSalary,
   });
 
   private applyPersonalIncomeTax = (value: number) =>

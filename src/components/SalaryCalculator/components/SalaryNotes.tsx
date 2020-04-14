@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { FormGroup, FormHelperText, makeStyles } from '@material-ui/core';
+import { FormHelperText, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   note: {
@@ -17,16 +17,14 @@ const messages = defineMessages({
   },
 });
 
-const SalaryNotes = ({ className }: { className: string }) => {
+const SalaryNotes = () => {
   const classes = useStyles();
   const intl = useIntl();
 
   return (
-    <FormGroup className={className}>
-      <FormHelperText className={classes.note}>
-        {intl.formatMessage(messages.legalNote)}
-      </FormHelperText>
-    </FormGroup>
+    <FormHelperText className={classes.note}>
+      {intl.formatMessage(messages.legalNote)}
+    </FormHelperText>
   );
 };
 

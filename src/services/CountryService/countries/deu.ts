@@ -91,9 +91,9 @@ class Deu implements CountryInterface {
   public getBaseCurrency = () => this.baseCurrency;
 
   public getCountryData = () => ({
-    min: this.minSalary,
-    max: this.maxSalary,
-    median: this.medianSalary,
+    minSalary: this.minSalary,
+    maxSalary: this.maxSalary,
+    medianSalary: this.medianSalary,
   });
 
   private getPersonalIncomeTax = (value: number) => {

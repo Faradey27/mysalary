@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import SalaryCalculator from '../../components/SalaryCalculator';
 import Widget from '../../components/Widget';
+import { Country, Currency } from '../../types';
 
 const useStyles = makeStyles({
   container: {
@@ -35,7 +36,10 @@ const Home = () => {
         <title>{intl.formatMessage(messages.pageTitle)}</title>
       </Head>
       <Widget className={classes.salaryWidget}>
-        <SalaryCalculator />
+        <SalaryCalculator
+          defaultCountry={Country.DEU}
+          defaultCurrency={Currency.EUR}
+        />
       </Widget>
     </main>
   );

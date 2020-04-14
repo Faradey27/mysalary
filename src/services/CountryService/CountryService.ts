@@ -32,8 +32,15 @@ class CountryService {
     if (!currentCountry) {
       throw new Error('Unknown country');
     }
-
     return currentCountry.getNetIncome(value);
+  };
+
+  public getBaseCurrency = (countryCode: Country) => {
+    const currentCountry = countries.get(countryCode);
+    if (!currentCountry) {
+      throw new Error('Unknown country');
+    }
+    return currentCountry.getBaseCurrency();
   };
 }
 
