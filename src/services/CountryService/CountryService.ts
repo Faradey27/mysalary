@@ -1,4 +1,4 @@
-import { Country, Currency } from '../../types';
+import { Country, Currency, SalaryPeriod } from '../../types';
 import countries from './countries';
 
 interface CountryData {
@@ -33,6 +33,18 @@ class CountryService {
       throw new Error('Unknown country');
     }
     return currentCountry.getNetIncome(value);
+  };
+
+  public getSalaryInfo = (
+    countryCode: Country,
+    value: number,
+    salaryPeriod: SalaryPeriod
+  ) => {
+    const currentCountry = countries.get(countryCode);
+    if (!currentCountry) {
+      throw new Error('Unknown country');
+    }
+    return currentCountry.getSalaryInfo(value, salaryPeriod);
   };
 
   public getBaseCurrency = (countryCode: Country) => {

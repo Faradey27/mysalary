@@ -33,9 +33,9 @@ interface SalaryResultsProps {
 }
 
 const messages = defineMessages({
-  yearlyGrossIncome: {
-    id: 'salaryCalculator.yearlyNetIncome',
-    defaultMessage: 'Yearly net income: ',
+  annualyGrossIncome: {
+    id: 'salaryCalculator.annualyNetIncome',
+    defaultMessage: 'Annualy net income: ',
   },
   monthlyGrossIncome: {
     id: 'salaryCalculator.monthlyNetIncome',
@@ -54,7 +54,7 @@ const SalaryResults = ({
   return (
     <FormGroup className={clsx(classes.results, className)}>
       <FormHelperText className={classes.resultTitle}>
-        {intl.formatMessage(messages.yearlyGrossIncome)}
+        {intl.formatMessage(messages.annualyGrossIncome)}
         <strong>
           {currency}
           {Math.floor(salaryValue)}

@@ -1,10 +1,12 @@
 import { memo, useEffect, useState } from 'react';
 import { FormControl, makeStyles } from '@material-ui/core';
+import clsx from 'clsx';
 
 import { useAppServices } from '../../services';
-import { Country, Currency } from '../../types';
+import { Country, Currency, SalaryPeriod } from '../../types';
 import CountrySelector from './components/CountrySelector';
 import CurrencySelector from './components/CurrencySelector';
+import SalaryDetails from './components/SalaryDetails';
 import SalaryField from './components/SalaryField';
 import SalaryNotes from './components/SalaryNotes';
 import SalaryResults from './components/SalaryResults';
@@ -32,20 +34,29 @@ const SalaryCalculator = ({
   defaultCurrency,
 }: SalaryCalculatorProps) => {
   const classes = useStyles();
-  const { currencyService } = useAppServices();
+  const { currencyService, countryService } = useAppServices();
 
   const [country, setCountry] = useState(defaultCountry);
   const [currency, setCurrency] = useState(defaultCurrency);
+  const [salaryPeriodValue, setSalaryPeriodValue] = useState(
+    SalaryPeriod.ANNUALY
+  );
   const {
     grossSalaryValue,
     netSalaryValue,
     setGrossSalaryValue,
-  } = useSalaryValue(country, currency);
+  } = useSalaryValue(country, currency, salaryPeriodValue);
 
   // on mount we re-freshing our data about currencies
   useEffect(() => {
     currencyService.refreshCurrencyData();
   }, [currencyService]);
+
+  const salaryInfo = countryService.getSalaryInfo(
+    country,
+    grossSalaryValue,
+    salaryPeriodValue
+  );
 
   return (
     <FormControl component="form" className={classes.form}>
@@ -57,7 +68,9 @@ const SalaryCalculator = ({
       <SalaryField
         className={classes.field}
         value={grossSalaryValue}
+        salaryPeriod={salaryPeriodValue}
         onChange={setGrossSalaryValue}
+        onChangeSalaryPeriod={setSalaryPeriodValue}
       />
       <CurrencySelector
         className={classes.field}
@@ -66,10 +79,16 @@ const SalaryCalculator = ({
       />
       <SalaryNotes />
       <SalaryResults
-        className={classes.results}
+        className={clsx(classes.results, classes.field)}
         currency={currencyService.getSign(currency)}
         salaryValue={netSalaryValue}
       />
+      {salaryInfo.length ? (
+        <SalaryDetails
+          currency={currencyService.getSign(currency)}
+          salaryInfo={salaryInfo}
+        />
+      ) : null}
     </FormControl>
   );
 };

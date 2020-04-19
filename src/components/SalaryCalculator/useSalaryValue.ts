@@ -2,9 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { usePrevious } from '../../hooks/usePrevious';
 import { useAppServices } from '../../services';
-import { Country, Currency } from '../../types';
+import { Country, Currency, SalaryPeriod } from '../../types';
 
-export const useSalaryValue = (country: Country, currency: Currency) => {
+export const useSalaryValue = (
+  country: Country,
+  currency: Currency,
+  salaryPeriodValue: SalaryPeriod
+) => {
   const { countryService, currencyService } = useAppServices();
 
   const prevCurrency = usePrevious<Currency>(currency);
@@ -31,9 +35,14 @@ export const useSalaryValue = (country: Country, currency: Currency) => {
 
   // calculate NET salary
   const netSalaryValue = useMemo(() => {
+    const value =
+      salaryPeriodValue === SalaryPeriod.ANNUALY
+        ? grossSalaryValue
+        : grossSalaryValue * 12;
+
     const baseCurrencyForCountry = countryService.getBaseCurrency(country);
     const salaryValueInBaseCurrency = currencyService.convert(
-      grossSalaryValue,
+      value,
       currency,
       baseCurrencyForCountry
     );
@@ -46,7 +55,14 @@ export const useSalaryValue = (country: Country, currency: Currency) => {
       baseCurrencyForCountry,
       currency
     );
-  }, [grossSalaryValue, country, currency, countryService, currencyService]);
+  }, [
+    grossSalaryValue,
+    salaryPeriodValue,
+    country,
+    currency,
+    countryService,
+    currencyService,
+  ]);
 
   return { grossSalaryValue, netSalaryValue, setGrossSalaryValue };
 };

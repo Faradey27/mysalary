@@ -96,6 +96,8 @@ class Deu implements CountryInterface {
     medianSalary: this.medianSalary,
   });
 
+  public getSalaryInfo = () => [];
+
   private getPersonalIncomeTax = (value: number) => {
     let taxes = 0;
     const incometaxes = this.employeeTaxes.personalIncomeTax;
