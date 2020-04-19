@@ -80,6 +80,8 @@ class Est implements CountryInterface {
       salaryPeriod === SalaryPeriod.ANNUALY ? value : value * 12
     );
 
+    console.log(personalIncomeTaxPayment);
+
     const totalCostOfEmployer =
       value +
       prepareValue(socialTaxPayment, salaryPeriod) +
@@ -149,7 +151,7 @@ class Est implements CountryInterface {
       incomeTaxFreeValue;
 
     const personalIncomeTaxPayment = this.getPersonalIncomeTaxPayment(
-      value - notTaxableForIncome
+      Math.max(0, value - notTaxableForIncome)
     );
 
     const unemploymentInsuarenceByEmployerPayment = this.getUnemploymentInsuarencePaymentByEmployer(
