@@ -1,3 +1,4 @@
+import { Currency, SalaryPeriod } from '../../../../types';
 import Est from '../est';
 
 const salaryDataset = [
@@ -14,11 +15,57 @@ const salaryDataset = [
 ];
 
 describe('Country service: Estonia', () => {
-  salaryDataset.forEach((salary) => {
-    it(`annual gross salary: ${salary.value}, annual net salary: ${salary.exp}`, () => {
+  describe('Metadata', () => {
+    it(`correct currency`, () => {
       const est = new Est();
 
-      expect(est.getNetIncome(salary.value)).toBe(salary.exp);
+      expect(est.getBaseCurrency()).toBe(Currency.EUR);
+    });
+
+    it(`correct country data`, () => {
+      const est = new Est();
+
+      expect(est.getCountryData()).toMatchSnapshot();
+    });
+  });
+
+  describe('Net income', () => {
+    salaryDataset.forEach((salary) => {
+      it(`annual gross salary: ${salary.value}, annual net salary: ${salary.exp}`, () => {
+        const est = new Est();
+
+        expect(est.getNetIncome(salary.value)).toBe(salary.exp);
+      });
+    });
+  });
+
+  describe('Salary info', () => {
+    salaryDataset.forEach((salary) => {
+      it(`annual gross salary: ${salary.value}`, () => {
+        const est = new Est();
+
+        const salaryInfo = est.getSalaryInfo(
+          salary.value,
+          SalaryPeriod.ANNUALY
+        );
+
+        expect(salaryInfo).toMatchSnapshot();
+        expect(salaryInfo[salaryInfo.length - 1].value).toBe(salary.exp);
+      });
+
+      it(`monthly gross salary: ${salary.value / 12}`, () => {
+        const est = new Est();
+
+        const salaryInfo = est.getSalaryInfo(
+          salary.value / 12,
+          SalaryPeriod.MONTHLY
+        );
+
+        expect(salaryInfo).toMatchSnapshot();
+        expect(salaryInfo[salaryInfo.length - 1].value).toBe(
+          Math.floor(salary.exp / 12)
+        );
+      });
     });
   });
 });

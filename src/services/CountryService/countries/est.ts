@@ -80,8 +80,6 @@ class Est implements CountryInterface {
       salaryPeriod === SalaryPeriod.ANNUALY ? value : value * 12
     );
 
-    console.log(personalIncomeTaxPayment);
-
     const totalCostOfEmployer =
       value +
       prepareValue(socialTaxPayment, salaryPeriod) +

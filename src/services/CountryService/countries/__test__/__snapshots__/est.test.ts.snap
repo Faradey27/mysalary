@@ -1,0 +1,818 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country service: Estonia Metadata correct country data 1`] = `
+Object {
+  "maxSalary": Object {
+    "currency": "EUR",
+    "value": 140000,
+  },
+  "medianSalary": Object {
+    "currency": "EUR",
+    "value": 36000,
+  },
+  "minSalary": Object {
+    "currency": "EUR",
+    "value": 7000,
+  },
+}
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 1000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 1338,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 330,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 8,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 1000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 20,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 16,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 964,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 5000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 6690,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 1650,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 40,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 5000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 100,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 80,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 4820,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 6000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 8028,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 1980,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 48,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 6000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 120,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 96,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 5784,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 12000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 16056,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 3960,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 96,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 12000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 240,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 192,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 1113,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 10454,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 20000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 26760,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 6600,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 160,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 20000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 400,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 320,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 3289,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 15990,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 24000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 32112,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 7920,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 192,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 24000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 480,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 384,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 4513,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 18622,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 50000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 66900,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 16500,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 400,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 50000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 1000,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 800,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 9640,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 38560,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 50000 2`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 66900,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 16500,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 400,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 50000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 1000,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 800,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 9640,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 38560,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 150000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 200700,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 49500,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 1200,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 150000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 3000,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 2400,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 28920,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 115680,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info annual gross salary: 300000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 401400,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 99000,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 2400,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 300000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 6000,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 4800,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 57840,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 231360,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 83.33333333333333 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 110,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 27,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 83,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 1,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 1,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 80,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 416.6666666666667 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 556,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 137,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 3,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 416,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 8,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 6,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 401,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 500 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 669,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 165,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 4,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 500,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 10,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 8,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 0,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 482,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 1000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 1338,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 330,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 8,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 1000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 20,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 16,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 92,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 871,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 1666.6666666666667 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 2229,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 550,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 13,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 1666,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 33,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 26,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 274,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 1332,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 2000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 2676,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 660,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 16,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 2000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 40,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 32,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 376,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 1551,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 4166.666666666667 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 5574,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 1375,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 33,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 4166,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 83,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 66,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 803,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 3213,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 4166.666666666667 2`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 5574,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 1375,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 33,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 4166,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 83,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 66,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 803,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 3213,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 12500 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 16725,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 4125,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 100,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 12500,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 250,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 200,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 2410,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 9640,
+  },
+]
+`;
+
+exports[`Country service: Estonia Salary info monthly gross salary: 25000 1`] = `
+Array [
+  Object {
+    "highlight": true,
+    "name": "Total cost for employer",
+    "value": 33450,
+  },
+  Object {
+    "name": "Social tax(employer)",
+    "value": 8250,
+  },
+  Object {
+    "name": "Unemployment insuarence(employer)",
+    "value": 200,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your gross salary",
+    "value": 25000,
+  },
+  Object {
+    "name": "Pension insuarence(employee)",
+    "value": 500,
+  },
+  Object {
+    "name": "Unemployment insuarence(employee)",
+    "value": 400,
+  },
+  Object {
+    "name": "Personal income tax(employee)",
+    "value": 4820,
+  },
+  Object {
+    "highlight": true,
+    "name": "Your net salary",
+    "value": 19280,
+  },
+]
+`;
