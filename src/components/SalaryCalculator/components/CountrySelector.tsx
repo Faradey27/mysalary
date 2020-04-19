@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
+import { MenuItem, TextField } from '@material-ui/core';
 
 import { Country } from '../../../types';
 
@@ -13,40 +13,42 @@ interface SalaryRangeProps {
 const messages = defineMessages({
   country: {
     id: 'salaryCalculator.country',
-    defaultMessage: 'Country',
+    defaultMessage: 'Select country',
   },
-  deu: {
+});
+
+const countryTranslation = defineMessages({
+  [Country.DEU]: {
     id: 'countries.deu',
     defaultMessage: 'Germany',
   },
-  est: {
+  [Country.EST]: {
     id: 'countries.est',
     defaultMessage: 'Estonia',
   },
 });
+
+const countries = [Country.DEU, Country.EST];
 
 const SalaryRange = ({ className, value, onChange }: SalaryRangeProps) => {
   const intl = useIntl();
   const handleChange = useCallback((e) => onChange(e.target.value), [onChange]);
 
   return (
-    <FormControl className={className}>
-      <InputLabel id="country-selector-label">
-        {intl.formatMessage(messages.country)}
-      </InputLabel>
-      <Select
-        labelId="country-selector-label"
-        value={value}
-        onChange={handleChange}
-      >
-        <MenuItem value={Country.DEU}>
-          {intl.formatMessage(messages.deu)}
+    <TextField
+      select
+      variant="outlined"
+      className={className}
+      label={intl.formatMessage(messages.country)}
+      value={value}
+      onChange={handleChange}
+    >
+      {countries.map((countryKey) => (
+        <MenuItem value={countryKey} key={countryKey}>
+          {intl.formatMessage(countryTranslation[countryKey])}
         </MenuItem>
-        <MenuItem value={Country.EST}>
-          {intl.formatMessage(messages.est)}
-        </MenuItem>
-      </Select>
-    </FormControl>
+      ))}
+    </TextField>
   );
 };
 

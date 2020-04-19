@@ -8,16 +8,16 @@ export enum Country {
   EST = 'EST',
 }
 
-interface CountryData {
-  min: {
+export interface CountryData {
+  minSalary: {
     currency: Currency;
     value: number;
   };
-  max: {
+  maxSalary: {
     currency: Currency;
     value: number;
   };
-  median: {
+  medianSalary: {
     currency: Currency;
     value: number;
   };
