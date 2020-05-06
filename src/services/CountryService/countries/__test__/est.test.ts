@@ -9,7 +9,6 @@ const salaryDataset = [
   { value: 20000, exp: 15990 },
   { value: 24000, exp: 18622 },
   { value: 50000, exp: 38560 },
-  { value: 50000, exp: 38560 },
   { value: 150000, exp: 115680 },
   { value: 300000, exp: 231360 },
 ];
