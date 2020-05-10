@@ -3,8 +3,6 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Head from 'next/head';
 
-import Magic from '../../services/CountryService/countries/magic/magic';
-
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
@@ -36,8 +34,6 @@ const messages = defineMessages({
 const About = () => {
   const intl = useIntl();
   const classes = useStyles();
-
-  console.log(Magic.name);
 
   return (
     <div className={classes.root}>
