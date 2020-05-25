@@ -42,8 +42,11 @@ export const getNurseCareInsuranceValue = (value: number): PaymentValue => {
 
 // https://taxsummaries.pwc.com/germany/individual/other-taxes
 // https://www.bbx.de/grossnet-wage-calculator-germany/
-export const getHealthInsuranceValue = (value: number): PaymentValue => {
-  const procent = 0.146 + 0.01; // 0.01 - avarage health insuarence surcharge
+export const getHealthInsuranceValue = (
+  value: number,
+  surcharge: number = 0.01 // 0.01 - avarage health insuarence surcharge
+): PaymentValue => {
+  const procent = 0.146 + surcharge;
   // max value from which pension insuarence payed is 56250
   const valueForCalculation = Math.min(56250, value);
   const paymentToHealthInsuarence = procent * valueForCalculation;
