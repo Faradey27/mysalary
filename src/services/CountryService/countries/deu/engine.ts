@@ -14,10 +14,6 @@ const LUMP_SUM = 1000 + 36;
 export const getIncomeTaxDeductions = (value: number) => {
   const employeePensionValue = getPensionInsuranceValue(value).employee;
   const employerPensionValue = getPensionInsuranceValue(value).employer;
-  const healthInsuarenceValue = getHealthInsuranceValue(value).employee;
-  const nurseCareInsuarenceValue = getNurseCareInsuranceValue(value).employee;
-  const unemploymentInsuarenceValue = getUnemploymentInsuranceValue(value)
-    .employee;
 
   // for 2020 year, multiplier is 0.9
   const pensionTaxDedaction =
