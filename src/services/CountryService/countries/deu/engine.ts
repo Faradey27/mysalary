@@ -32,8 +32,6 @@ export const getIncomeTaxDeductions = (value: number) => {
   const otherSocialDeductions =
     healthDeduction >= 1900 ? healthDeduction : Math.min(1900, value * 0.12);
 
-  console.log(otherSocialDeductions);
-
   return pensionTaxDedaction + otherSocialDeductions + LUMP_SUM;
 };
 
@@ -54,10 +52,7 @@ export const getAnnualNetIncome = (value: number) => {
 
   const taxableIncome = value - taxDeductions;
 
-  console.log(taxableIncome, '---------', taxDeductions);
-
   const incomeTaxValue = getIncomeTaxValue(taxableIncome).employee;
-  console.log(incomeTaxValue, 'INCOME TAX', taxableIncome);
   const solidarityTaxValue = getSolidarityTaxValue(incomeTaxValue).employee;
 
   const annualNetIncome =

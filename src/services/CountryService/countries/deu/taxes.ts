@@ -36,8 +36,10 @@ export const getIncomeTaxValue = (value: number): PaymentValue => {
 
 // https://taxsummaries.pwc.com/germany/individual/taxes-on-personal-income
 export const getSolidarityTaxValue = (value: number): PaymentValue => {
+  const fullAmount = value >= 1340 ? value * 0.055 : (value - 972) * 0.2;
+
   return {
-    employee: value < 11664 ? 0 : value * 0.055,
+    employee: withAccurencyFormating(value <= 972 ? 0 : fullAmount),
     employer: 0,
   };
 };
